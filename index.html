@@ -4,191 +4,203 @@
 <head>
 	<meta charset="utf-8">
         <title>NGUYEN</title>
+
 	<style>
-    .button {
-    border: none;
-    color: black;
-    padding: 5px 10px ;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    }
 
-    .button2 {
-    background-color: pink; 
-    color: black; 
-    }
-
-    .button2:hover {
-    background-color: pink;
-    color: white;
-    }
-
-    .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #4CAF50;
-    }
-    
-
-    .button1:hover {
-    background-color: #4CAF50;
-    color: white;
-    }
-
+/* Body Style (Just background colour and border) */
     body {
         background-color:  rgb(270, 250, 240);
+        padding: 30px;
+        border: 1px solid gray;
+        border-top: 10px solid gray;
     }
+
+
+/* H1, H2 Style (heading with underline/border-bottom) */
     h1{
         border-bottom: 1px solid gray;
-        clear: both;
-
+        clear: both; /*which means no picture is allowed on the same line*/
     }
+
 	h2 {
 		color: rgb(160, 110, 100);
         clear: both;
 	}
+
+/* pic */
+    #pic {
+        opacity: 0.5;
+        z-index: -1;
+    }
+/* Table Style */
     table, th, td {
-    	text-align: center;
-        border: 1px solid black;
-        width: 600px;
         background-color: rgb(250,250,250);
+    	text-align: center;
+        width: 600px;
+        border: 1px solid black;
         }
 
-    #gray {
+/* Scrolling box style 
+    #scrolling-box{
       	background-color:  rgb(235, 200, 200);
         padding: 10px;
         width: 400px;
         height: 130px;
-        overflow: auto;
+        overflow: scroll; /*which allows us to scroll
         border: 1px dotted black;
       }
-      #container {
-      	border: 1px solid gray;
-        border-top: 10px solid gray;
-        padding: 15px;
-      }
-      #ToC {
+    #ToC {
        width: 150px;
        float: right;
        margin: 20px;
        border: 1px dotted gray;
        padding: 10px;
-       position: fixed;
+       position: sticky;
        right: 0;
-       top: 0;
+       top: 100px;
       }
-      #warning{
-        background-color: rgb(219, 11, 11);
-        color: white;
-      }
+      */
+    
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(235, 200, 200);
+    }
 
-      
+    .menu li {
+        float: left;
+    }
+        
+    .menu li a, .dropbtn {
+        display: inline-block;
+        color: black;
+        text-align: center;
+        padding: 15px; 
+        text-decoration: none;
+    }
+
+    .menu li a:hover  {
+        background-color: rgb(160, 70, 77);
+        color: white;
+    }
+
+
+    menu li.dropdown {
+        display: inline-block;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(241, 225, 225);
+        min-width: 100px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .modules > .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(241, 225, 225);
+        width: 300px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+
+
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
 	</style>
 </head>
   
   
 <body>
-<div id="container">
-
-
-	<h1> NGUYEN Minh-Chau </h1>
-    <div id="ToC">
-        <strong>Table of contents</strong>
-        <ol>
-            <li><a href="#section-one"> About me </a></li>
-            <li><a href="#section-two"> Timetables</a></li>
-            <li><a href="#section-three"> To-do list</a></li>
-        </ol>
-    </div>
-    <div id="pic">
-   <img src="https://images.unsplash.com/photo-1610790952785-01cd7cc47214?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" alt="flowers" width="200"> </div> 
-
-    <h1 id="section-one"> About me </h1>
-    <h2> Education </h2>
+    <!--Headings-->
+    <h1> NGUYEN Minh-Chau </h1>
     
-    <p> I'm studying at the University of Warwick.
-    I <em>love</em> bubble tea. I also love <strong>sushi</strong>. <br>    
-    
-    <h3>My modules: </h3>
-    <div id="gray">
-    <h4>First term modules:</h4>
+    <!--Menu-->
+    <div class="menu">
     <ul>
-        <li>Analysis I</li>
-        <li>Foundations</li>
-        <li>Differential Equations</li>
-        <li>Abstract Algebra</li>
+        <li><a href="#section1">About me</a></li>
+        <li><a href="#section2">Education</a></li>
+        <li class="dropdown">
+            <a href="#section3" class="dropbtn">To-do list</a>
+            <div class="dropdown-content">
+                <a href="https://elitedatascience.com/beginner-kaggle">Start Kaggle</a>
+            </div>    
+        </li>
     </ul>
+    </div>  
+	
+    <!--Picture-->
+    <div id="pic">
+        <img src="https://images.unsplash.com/photo-1610790952785-01cd7cc47214?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" alt="flowers" width="650"> </div> 
+
+    
+    <!-- Section One -->
+    <h1 id="section1"> About me </h1>
+        <p> I'm studying at the University of Warwick.
+        I <em>love</em> bubble tea. I also love <strong>sushi</strong>. <br> </p>
+
+  
+    <!--Section Two -->     
+    <h1 id="section2"> Education </h1>
+    <h4>First term modules:</h4>
+
+    <div class="menu">
+            <ul>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41090">Analysis I</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41091">Foundations</a></li>
+                <li class="dropdown"><a href="https://moodle.warwick.ac.uk/course/view.php?id=41092" class="dropbtn">Differential Equations</a>
+                    <div class="modules">
+                    <div class="dropdown-content">
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Definitions</a>
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">First-Order ODEs</a>
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Second-Order ODEs</a>
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Introductions to Difference Equations</a>
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Systems of Linear First-Order ODEs</a>
+                        <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Extra Contents</a>
+                    </div>    
+                    </div>
+                </li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41094">Abstract Algebra</a></li>
+            </ul>
+            
+    </div>
+
     <h4>Second term modules:</h4>
-    <ol>         
-        <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></li>
-        <li>Statistics A/<a href="https://moodle.warwick.ac.uk/course/view.php?id=41511">B</a></li>
-        <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">Discrete Maths<a></a></li>
-        <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">Linear Algebra</a></li>
-        <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">Geometry and Motion</a></li>
-        <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">Mathematics by Computer</a></li>
-        <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> Statistical Laboratory</a></li>
-    <ol>
-     </div>
-    </p>
-    <h1 id="section-two"> Timetable </h1>
-    <div id="timetable">
-    <li> Seminars
-    <table>
-        <thead>
-            <tr>
-                <th>Mon </th>
-                <th>Tue </th>
-                <th>Wed</th>
-                <th>Thurs</th>
-                <th>Fri</th>
+    <div class="menu">
+            <ul>         
+                <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41511">Statistics B</a></li>
+                <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">Discrete Maths<a></a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">Linear Algebra</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">Geometry and Motion</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">Mathematics by Computer</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> Statistical Laboratory</a></li>
+            <ul>
+    </div>
+    
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>6pm Tutorial </td>
-                <td>9pm ST104 Group 15 </td>
-                <td></td>
-                <td>6pm Supervision<br></td>
-                <td>9pm CS137</td>
+    <!-- Section Three -->
+    <h1 id="section3"> To-do list</h1> 
 
-            </tr>
-        </tbody>
-    </table>
-    </li>
-    <p></p>
-    <li> Lectures
-    <table>
-        <thead>
-            <tr>
-                <th>Mon </th>
-                <th>Tue </th>
-                <th>Wed</th>
-                <th>Thurs</th>
-                <th>Fri</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>5pm <a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></td>
-                <td>5pm <a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">MA134 Geo</a>
-                <br>10pm <a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">MA124</a> </td>
-                <td></td>
-                <td></td>
-                <td>4pm <a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">CS137<a></td>
-
-            </tr>
-        </tbody>
-    </table>
-    </li>
-    <p></p>
-    <li> <a href="https://moodle.warwick.ac.uk/course/view.php?id=43978">Deadlines</a> & Assignments
+        <div id="timetable">
+        <li> Seminars
         <table>
             <thead>
                 <tr>
@@ -197,42 +209,80 @@
                     <th>Wed</th>
                     <th>Thurs</th>
                     <th>Fri</th>
-    
+
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td> Quiz <a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a>    
-                    <br>// Maths by Computer Lab <a href="file:///Users/admin/Desktop/My%20Webpage/Screenshot%202021-02-20%20at%2015.31.46.png">(w9, 10)</a>
-                    <br>// <a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">GM (w10)</a></td>
+                    <td>6pm Tutorial </td>
+                    <td>9pm ST104 Group 15 </td>
                     <td></td>
-                    <td></td>
-                    <td>ST106 labs <a href="file:///Users/admin/Downloads/Week%201%20-%20Part%20A.pdf">(w10, w3)</a>
-                    <br>LA <a href="file:///Users/admin/Desktop/My%20Webpage/Screenshot%202021-02-20%20at%2015.27.56.png">(quiz/assessment alternate)</a>
-                    <br>Ana (w9)
-                    </td>
-                    <td></td>
-    
+                    <td>6pm Supervision<br></td>
+                    <td>9pm CS137</td>
+
                 </tr>
             </tbody>
         </table>
-        <li> ST112 Quiz 2 Due 16 March 2021 </li>
+        </li>
+        <p></p>
+        <li> Lectures
+        <table>
+            <thead>
+                <tr>
+                    <th>Mon </th>
+                    <th>Tue </th>
+                    <th>Wed</th>
+                    <th>Thurs</th>
+                    <th>Fri</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5pm <a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></td>
+                    <td>5pm <a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">MA134 Geo</a>
+                    <br>10pm <a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">MA124</a> </td>
+                    <td></td>
+                    <td></td>
+                    <td>4pm <a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">CS137<a></td>
+
+                </tr>
+            </tbody>
+        </table>
+        </li>
     <p></p>
-    <!-- 
-        <div id="gray">
-        <ul>
-            <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">CS137<a>: 12 noon on February 8 (Monday of Week 5) </li>
-            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41510">ST111<a>: Quiz, due week 6</li>
-            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">MA124</a>: Assignment 2 due Noon Monday of week 5 (8 February 2021) </li>
-            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">MA106</a>: Quiz due Thursday week 4, Homework due Thursday week 5</li>
-            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">MA134 Geometry and Motion</a>: Homework due Monday week 5</li>
-            <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a>: Assignment due Thursday week 4</li>
-        </ul>
-        </div>
-    </li>
-    -->
+        <li> <a href="https://moodle.warwick.ac.uk/course/view.php?id=43978">Deadlines</a> & Assignments
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mon </th>
+                        <th>Tue </th>
+                        <th>Wed</th>
+                        <th>Thurs</th>
+                        <th>Fri</th>
+        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Quiz <a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a>    
+                        <br>// Maths by Computer Lab <a href="file:///Users/admin/Desktop/My%20Webpage/Screenshot%202021-02-20%20at%2015.31.46.png">(w9, 10)</a>
+                        <br>// <a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">GM (w10)</a></td>
+                        <td></td>
+                        <td></td>
+                        <td>ST106 labs <a href="file:///Users/admin/Downloads/Week%201%20-%20Part%20A.pdf">(w10, w3)</a>
+                        <br>LA <a href="file:///Users/admin/Desktop/My%20Webpage/Screenshot%202021-02-20%20at%2015.27.56.png">(quiz/assessment alternate)</a>
+                        <br>Ana (w9)
+                        </td>
+                        <td></td>
+        
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </li>
     <p></p>
-    <!-- <li>Talks
+     <li>Talks
         <ul>
             <li>6pm Tue 19/1 <a href="https://youtu.be/7lsG8BN_Fok">WDSS Virtual Talk: Predictive Analytics at Intel</a></li>
             <li>10pm Tue 19/1 <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_MmE4MDFlZjgtOTgzYS00YTBhLWI2YzMtNzNiMmRlNzg4Yzdj%40thread.v2/0?context=%7b%22Tid%22%3a%2209bacfbd-47ef-4465-9265-3546f2eaf6bc%22%2c%22Oid%22%3a%22c8033976-6906-4d0f-ac61-42767a14a679%22%7d">Mathematics at Work: the use of Mathematics to solve problems at DeepMind </a></li>
@@ -242,42 +292,14 @@
         </ul>
         </li>
     </div>
-    -->
-
     
-    <h1 id="section-three"> To-do list</h1> 
-    <ul>
-        <li> Finish Multivariable Calculus on <a href="https://www.khanacademy.org/math/multivariable-calculus">Khan</a> </li>
-        <li> Finish reading the book on Kindle </li>
-        <li> Follow these steps to get started on Kaggle <a href ="https://elitedatascience.com/beginner-kaggle" class="button button2"> Click here!</a> </li>
-        <a href="https://tabula.warwick.ac.uk/profiles/view/course/1905999_2/2020/timetable" class="button button1">Tabula</a>
 
-    <!--    <li> Finish course assignments
-            <ul>
+    <!-- Section Four -->
+    <h1 id="section4"> Year One Summary </h1> 
     
-                <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">CS137<a></li>
-                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">MA124</a>: Maths by Computer, next <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2NlOTQ4YjAtZmE3Yy00NTA1LTkyNTctY2Y4ODY1Mjg0MDFh%40thread.v2/0?context=%7b%22Tid%22%3a%2209bacfbd-47ef-4465-9265-3546f2eaf6bc%22%2c%22Oid%22%3a%225160eb87-6044-42ff-a312-12870fa1c585%22%2c%22IsBroadcastMeeting%22%3atrue%7d">live lecture</a> Tuesday week 2 </li>
-                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">MA106</a></li>
-                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">MA134 Geometry and Motion</a></li>
-                <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></li>
-                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> ST104 Statistical Laboratory</a></li>
-            </ul>
-        </li>
-
-        <li> Old Modules</li>
-        <ul>
-            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41510">ST111<a></li>
-            <li>Analysis I</li>    
-            <li>Differential Equations</li>
-            <li>Foundations</li>
-            <li>Abstract Algebra</li>
-        </ul>
-    </ul>
-    -->
-
-  </div>
-
 </body>
 
 </html>
+    
+    
 
