@@ -6,6 +6,41 @@
         <title>NGUYEN</title>
 
 	<style>
+   .button {
+    border: none;
+    color: black;
+    padding: 5px 10px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: relative;
+    }
+
+/* Button Style 1 (GREEN) */
+    .button1 {
+    background-color: pink; 
+    color: green; 
+    }
+    
+    .button1:hover {
+    background-color: pink;
+    color: white;
+    }
+
+/* Button Style 2 (PINK) */
+    .button2 {
+    background-color: pink;
+    color: black;
+    }
+
+    .button2:hover {
+    background-color: pink;
+    color: white;
+    }
 
 /* Body Style (Just background colour and border) */
     body {
@@ -27,11 +62,7 @@
         clear: both;
 	}
 
-/* pic */
-    #pic {
-        opacity: 0.5;
-        z-index: -1;
-    }
+
 /* Table Style */
     table, th, td {
         background-color: rgb(250,250,250);
@@ -79,10 +110,12 @@
         text-align: center;
         padding: 15px; 
         text-decoration: none;
+        transition-duration: 0.4s;
+
     }
 
     .menu li a:hover  {
-        background-color: rgb(160, 70, 77);
+        background-color: rgb(160, 70, 77); 
         color: white;
     }
 
@@ -131,6 +164,10 @@
 <body>
     <!--Headings-->
     <h1> NGUYEN Minh-Chau </h1>
+
+    <!--Picture-->
+    <div id="pic">
+        <img src="https://images.unsplash.com/photo-1610790952785-01cd7cc47214?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" alt="flowers" width="250"> </div> 
     
     <!--Menu
     <div class="menu">
@@ -146,18 +183,35 @@
     </ul>
     </div>  
     -->
-	
-    <!--Picture-->
-    <div id="pic">
-        <img src="https://images.unsplash.com/photo-1610790952785-01cd7cc47214?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=975&q=80" alt="flowers" width="650"> </div> 
-
     
     <!-- Section One -->
     <h1 id="section1"> About me </h1>
         <p> I'm studying at the University of Warwick.
         I <em>love</em> bubble tea. I also love <strong>sushi</strong>. <br> </p>
 
-  
+    <!--
+        <h3>My modules: </h3>
+        <!-- Scrolling box
+        <div id="scrolling-box">
+            <h4>First term modules:</h4>
+            <ul>
+                <li>Analysis I</li>
+                <li>Foundations</li>
+                <li>Differential Equations</li>
+                <li>Abstract Algebra</li>
+            </ul>
+            <h4>Second term modules:</h4>
+            <ol>         
+                <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></li>
+                <li>Statistics A/<a href="https://moodle.warwick.ac.uk/course/view.php?id=41511">B</a></li>
+                <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">Discrete Maths<a></a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">Linear Algebra</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">Geometry and Motion</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">Mathematics by Computer</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> Statistical Laboratory</a></li>
+            <ol>
+        </div>
+    -->
     <!--Section Two -->     
     <h1 id="section2"> Education </h1>
     <h4>First term modules:</h4>
@@ -195,10 +249,38 @@
                 <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> Statistical Laboratory</a></li>
             <ul>
     </div>
+    <p></p>
+    Follow these steps to get started on Kaggle <a href ="https://elitedatascience.com/beginner-kaggle" class="button button2"> Click here!</a> <a href="https://tabula.warwick.ac.uk/profiles/view/course/1905999_2/2020/timetable" class="button button1">Tabula</a></li>
     
 
     <!-- Section Three -->
     <h1 id="section3"> To-do list</h1> 
+    <!--
+    <ul>
+        <li> Follow these steps to get started on Kaggle <a href ="https://elitedatascience.com/beginner-kaggle" class="button button2"> Click here!</a>  <a href="https://tabula.warwick.ac.uk/profiles/view/course/1905999_2/2020/timetable" class="button button1">Tabula</a></li>
+       
+    </ul>
+        <li> Finish course assignments
+            <ul>
+    
+                <li><a href="https://warwick.ac.uk/fac/sci/dcs/teaching/material/cs137/lectures21">CS137<a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41088">MA124</a>: Maths by Computer, next <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_M2NlOTQ4YjAtZmE3Yy00NTA1LTkyNTctY2Y4ODY1Mjg0MDFh%40thread.v2/0?context=%7b%22Tid%22%3a%2209bacfbd-47ef-4465-9265-3546f2eaf6bc%22%2c%22Oid%22%3a%225160eb87-6044-42ff-a312-12870fa1c585%22%2c%22IsBroadcastMeeting%22%3atrue%7d">live lecture</a> Tuesday week 2 </li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41084">MA106</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41093">MA134 Geometry and Motion</a></li>
+                <li><a href="https://moodlex.warwick.ac.uk/course/view.php?id=91">Analysis II</a></li>
+                <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41509"> ST104 Statistical Laboratory</a></li>
+            </ul>
+        </li>
+
+        <li> Old Modules</li>
+        <ul>
+            <li><a href="https://moodle.warwick.ac.uk/course/view.php?id=41510">ST111<a></li>
+            <li>Analysis I</li>    
+            <li>Differential Equations</li>
+            <li>Foundations</li>
+            <li>Abstract Algebra</li>
+        </ul>
+    -->
 
         <div id="timetable">
         <li> Seminars
@@ -297,7 +379,59 @@
 
     <!-- Section Four -->
     <h1 id="section4"> Year One Summary </h1> 
+    <!--
+    <p>
+        <h2> First term</h2>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="button button1">Differential Equations</button> 
+            <div id="myDropdown" class="dropdown-content">
+                
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Definitions</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">First-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Second-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Introductions to Difference Equations</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Systems of Linear First-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Extra Contents</a>
+                
+            </div>  
+            <button onclick="myFunction()" class="button button1">seeing if I can change stuffs </button> 
+            <div id="myDropdown" class="dropdown-content">
+                
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Definitions</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">First-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Second-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Introductions to Difference Equations</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Systems of Linear First-Order ODEs</a>
+                    <a href="https://moodle.warwick.ac.uk/course/view.php?id=41092">Extra Contents</a>
+                
+            </div>  
+        </div>
+    </p>
+
+ 
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
     
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.button1')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+
 </body>
 
 </html>
